@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Details
+{% endblock %}
+{% block body %}
+  <div class="container mt-5">
+    <h1>YOUR SCHEDULE FOR COMING DAYS</h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Month</th>
+            <th scope="col" >Activity</th>
+            <th scope="col">Status</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+          <tr>
+            <th scope="row">{{d.day}}</th>
+            <td>{{d.month}}</td>
+            <td  >{{d.activity}}</td>
+            <td ><a href="{% url 'delete' d.id %}" class="btn btn-primary">Delete</a></td>
+            
+          </tr>
+    {% endfor %}
+          
+        </tbody>
+      </table>
+    
+  </div>
+ 
+  <script>
+    
+  </script>
+{% endblock %}
+
