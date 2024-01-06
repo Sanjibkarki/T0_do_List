@@ -5,6 +5,20 @@ Homepage
 {% endblock %}
 
 {% block body %}
+
+{% if messages %}
+    <center>
+        <ul class="messages" style="background-color: grey; height:60px">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {{ message}}
+                <span class="close-message" style="padding-left: 40px;color:red; cursor: pointer; font-size: 40px;" onclick="dismissMessage(this)">×</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </center>
+{% endif %}
+    
 <div class="container" style="text-align: center;">
     <h1 >Welcome {{user}}</h1>
     <p>Make your List of Activity using our calender</p>
@@ -34,6 +48,12 @@ Homepage
             
         })
     })
+    
+    function dismissMessage(element) {
+        var messageElement = element.parentElement.parentElement;
+        messageElement.style.display = 'none';
+    }
+
 
 
 </script>

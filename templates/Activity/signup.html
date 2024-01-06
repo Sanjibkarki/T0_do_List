@@ -47,29 +47,12 @@
             
     </form>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const emailInput = document.getElementById("email-input");
-        const suggestionBox = document.getElementById("suggestion-box");
-    
-        emailInput.addEventListener("input", function() {
-            const email = emailInput.value;
-            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Basic email format validation
-    
-            if (!isValid) {
-                suggestionBox.style.display = "block";
-                suggestionBox.innerHTML = "Invalid email format. Please use example@example.com format.";
-            } else {
-                suggestionBox.style.display = "none";
-                suggestionBox.innerHTML = "";
-            }
-        });
-    });
       var pass1 = document.getElementById("pass1")
       var pass2 = document.getElementById("pass2")
       function clicked1(){
           
       if(pass1.type==='password'){
-        pass1.type = 'type'
+        pass1.type = 'text'
       }
       else{
         pass1.type = 'password'

@@ -51,7 +51,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-SESSION_COOKIE_AGE = 2
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # You can choose other session backends as well
+SESSION_COOKIE_SECURE = True  
 ROOT_URLCONF = 'do_list.urls'
 
 TEMPLATES = [
